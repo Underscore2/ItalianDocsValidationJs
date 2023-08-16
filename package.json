@@ -1,0 +1,28 @@
+{
+  "name": "ItalianDocsValidationJs",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Underscore2/ItalianDocsValidationJs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Underscore2/ItalianDocsValidationJs/issues"
+  },
+  "homepage": "https://github.com/Underscore2/ItalianDocsValidationJs#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.3",
+    "@types/node": "^20.4.9",
+    "jest": "^29.6.2"
+  }
+}
