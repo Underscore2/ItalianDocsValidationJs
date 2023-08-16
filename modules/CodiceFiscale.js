@@ -4,9 +4,18 @@ exports.reverseExtractBirthplaceInitials = exports.reverseExtractBirthplace = ex
 var CommonUtils_1 = require("../utils/CommonUtils");
 var Errors_1 = require("../utils/Errors");
 /**
- * ItalianDocsValidationJs Library
+ * ItalianDocsValidationJs - CodiceFiscale
  *
- *  CODICE FISCALE
+ * This file provides functions for generating and extracting information
+ * from the Italian "Codice Fiscale," a unique identification code used in Italy.
+ * The functions here allow for the creation of a Codice Fiscale based on personal
+ * details and reverse extraction of details from a given Codice Fiscale.
+ * It includes functionality to extract first and last names, birthdate, gender,
+ * birthplace, and related initials.
+ *
+ * @version 0.1.0
+ * @license MIT License
+ * @author [Underscore2]
  */
 /**
  * Generates an Italian codice fiscale (fiscal code) based on the provided Person object.
@@ -31,7 +40,7 @@ var generateCodiceFiscale = function (person) {
     var day = (0, exports.extractDayOfBirth)(person.birthday, person.gender);
     var comune = (0, exports.extractBirthplace)(person.birthplace, person.birthplaceInitials);
     var partialCdf = "".concat(lastName).concat(firstName).concat(year).concat(month).concat(day).concat(comune);
-    var controlCode = (0, exports.extractControlCode)(partialCdf);
+    var controlCode = (0, exports.extractControlCode)(partialCdf, person.birthplace);
     var cdf = "".concat(partialCdf).concat(controlCode);
     return cdf;
 };
@@ -168,6 +177,9 @@ var extractYearOfBirth = function (dateOfBirth) {
         return year;
     }
     if (dateOfBirth instanceof Date) {
+        if (isNaN(dateOfBirth.getTime())) {
+            throw new Errors_1.InvalidInputError('Invalid Date');
+        }
         var year = dateOfBirth.getFullYear().toString().slice(2, 4);
         return year;
     }
@@ -298,9 +310,15 @@ exports.extractDayOfBirth = extractDayOfBirth;
  */
 var extractBirthplace = function (birthPlace, birthplaceInitials) {
     var _a, _b;
+    var estero = (0, CommonUtils_1.getEstero)().find(function (birthplc) { return (0, CommonUtils_1.removeAccentsAndSpaces)(birthplc.name).toUpperCase() === (0, CommonUtils_1.removeAccentsAndSpaces)(birthPlace).toUpperCase(); });
     // Check if birthPlace and birthplaceInitials are provided
     if (!birthPlace || !birthplaceInitials) {
-        throw new Errors_1.InvalidInputError('Invalid input');
+        if (estero) {
+            return estero.code_at;
+        }
+        else {
+            throw new Errors_1.InvalidInputError('Invalid input');
+        }
     }
     // Convert initials to uppercase
     var fKey = birthplaceInitials[0].toUpperCase();
@@ -333,7 +351,8 @@ exports.extractBirthplace = extractBirthplace;
  * @param partialCdf - Partial codice fiscale (15 characters)
  * @returns The control character
  */
-var extractControlCode = function (partialCdf) {
+var extractControlCode = function (partialCdf, birthplace) {
+    var estero = (0, CommonUtils_1.getEstero)().find(function (birthplc) { return (0, CommonUtils_1.removeAccentsAndSpaces)(birthplc.name).toUpperCase() === (0, CommonUtils_1.removeAccentsAndSpaces)(birthplace).toUpperCase(); });
     // Input validation
     if (!partialCdf) {
         throw new Errors_1.InvalidInputError("Partial codice fiscale is required.");

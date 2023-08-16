@@ -1,16 +1,27 @@
 import {
   Person,
 } from "../interfaces/CodiceFiscale.interface";
-import { getProvinces } from "../utils/CommonUtils";
+
+import { getEstero, getProvinces, removeAccentsAndSpaces } from "../utils/CommonUtils";
 import { InvalidInputError, InvalidRegexError } from "../utils/Errors";
 
 
 
 /**
- * ItalianDocsValidationJs Library
+ * ItalianDocsValidationJs - CodiceFiscale
  * 
- *  CODICE FISCALE
+ * This file provides functions for generating and extracting information
+ * from the Italian "Codice Fiscale," a unique identification code used in Italy.
+ * The functions here allow for the creation of a Codice Fiscale based on personal
+ * details and reverse extraction of details from a given Codice Fiscale.
+ * It includes functionality to extract first and last names, birthdate, gender,
+ * birthplace, and related initials.
+ *
+ * @version 0.1.0
+ * @license MIT License
+ * @author [Underscore2]
  */
+
 
 /**
  * Generates an Italian codice fiscale (fiscal code) based on the provided Person object.
@@ -35,7 +46,7 @@ export const generateCodiceFiscale = (person: Person): string => {
   const day = extractDayOfBirth(person.birthday, person.gender);
   const comune = extractBirthplace(person.birthplace, person.birthplaceInitials);
   const partialCdf = `${lastName}${firstName}${year}${month}${day}${comune}`;
-  const controlCode = extractControlCode(partialCdf);
+  const controlCode = extractControlCode(partialCdf, person.birthplace);
   const cdf = `${partialCdf}${controlCode}`;
   return cdf;
 };
@@ -190,6 +201,7 @@ export const extractYearOfBirth = (dateOfBirth) => {
   }
 
   if (dateOfBirth instanceof Date) {
+    if (isNaN(dateOfBirth.getTime())) { throw new InvalidInputError('Invalid Date') }
     const year = dateOfBirth.getFullYear().toString().slice(2, 4);
     return year;
   }
@@ -323,10 +335,17 @@ export const extractDayOfBirth = (dateOfBirth: Date | string, gender: string) =>
  * @returns {string} The fisco_code associated with the birthplace.
  * @throws {InvalidInputError} If birthplace or birthplaceInitials are not provided, or if they are invalid.
  */
-export const extractBirthplace = (birthPlace, birthplaceInitials) => {
+export const extractBirthplace = (birthPlace: string, birthplaceInitials?: string) => {
+  const estero = getEstero().find(birthplc => removeAccentsAndSpaces(birthplc.name).toUpperCase() === removeAccentsAndSpaces(birthPlace).toUpperCase())
+
   // Check if birthPlace and birthplaceInitials are provided
   if (!birthPlace || !birthplaceInitials) {
-    throw new InvalidInputError('Invalid input');
+    if (estero) {
+      return estero.code_at
+    } else {
+      throw new InvalidInputError('Invalid input');
+
+    }
   }
 
   // Convert initials to uppercase
@@ -367,12 +386,13 @@ export const extractBirthplace = (birthPlace, birthplaceInitials) => {
  * @param partialCdf - Partial codice fiscale (15 characters)
  * @returns The control character
  */
-export const extractControlCode = (partialCdf: string): string => {
+export const extractControlCode = (partialCdf: string, birthplace: string): string => {
+  const estero = getEstero().find(birthplc => removeAccentsAndSpaces(birthplc.name).toUpperCase() === removeAccentsAndSpaces(birthplace).toUpperCase()
+  )
   // Input validation
   if (!partialCdf) {
     throw new InvalidInputError("Partial codice fiscale is required.");
   }
-
   if (partialCdf.length !== 15) {
     throw new InvalidInputError("Partial codice fiscale must contain exactly 15 characters.");
   }
@@ -473,9 +493,8 @@ export const reverseCodiceFiscale = (codiceFiscale: string): Person => {
     lastName: reverseExtractLastName(codiceFiscale),
 
     // Extract and reverse the birthday in DD/MM/YYYY format
-    birthday: `${reverseExtractDayOfBirth(codiceFiscale)}/${
-      reverseExtractMonthOfBirth(codiceFiscale)
-    }/${reverseExtractYearOfBirth(codiceFiscale)}`,
+    birthday: `${reverseExtractDayOfBirth(codiceFiscale)}/${reverseExtractMonthOfBirth(codiceFiscale)
+      }/${reverseExtractYearOfBirth(codiceFiscale)}`,
 
     // Extract and reverse the gender
     gender: reverseExtractGender(codiceFiscale),
@@ -564,18 +583,18 @@ export const reverseExtractGender = (codiceFiscale: string): string => {
 * @returns The extracted day of birthday.
 */
 export const reverseExtractDayOfBirth = (codiceFiscale: string): string => {
- if (!codiceFiscale || codiceFiscale.length !== 16) {
-   throw new InvalidInputError("Invalid codice fiscale.");
- }
+  if (!codiceFiscale || codiceFiscale.length !== 16) {
+    throw new InvalidInputError("Invalid codice fiscale.");
+  }
 
- // Extract characters from index 9 to 11 (exclusive) from the codice fiscale
- const day = Number(codiceFiscale.slice(9, 11));
+  // Extract characters from index 9 to 11 (exclusive) from the codice fiscale
+  const day = Number(codiceFiscale.slice(9, 11));
 
- // Check if day is greater than 31 and adjust it accordingly
- if (day > 31) {
-   return (day - 40).toString();
- }
- return day.toString();
+  // Check if day is greater than 31 and adjust it accordingly
+  if (day > 31) {
+    return (day - 40).toString();
+  }
+  return day.toString();
 };
 
 /** 
@@ -585,18 +604,18 @@ export const reverseExtractDayOfBirth = (codiceFiscale: string): string => {
 * @returns The extracted year of birthday.
 */
 export const reverseExtractYearOfBirth = (codiceFiscale: string): string => {
- if (!codiceFiscale || codiceFiscale.length !== 16) {
-   throw new InvalidInputError("Invalid codice fiscale.");
- }
+  if (!codiceFiscale || codiceFiscale.length !== 16) {
+    throw new InvalidInputError("Invalid codice fiscale.");
+  }
 
- // Extract characters from index 6 to 8 (exclusive) from the codice fiscale
- const year = codiceFiscale.slice(6, 8);
+  // Extract characters from index 6 to 8 (exclusive) from the codice fiscale
+  const year = codiceFiscale.slice(6, 8);
 
- // Check if the extracted year is greater than the current year and adjust it
- if (Number(year) > Number(new Date().getFullYear().toString().slice(-2))) {
-   return `19${year}`;
- }
- return `20${year}`;
+  // Check if the extracted year is greater than the current year and adjust it
+  if (Number(year) > Number(new Date().getFullYear().toString().slice(-2))) {
+    return `19${year}`;
+  }
+  return `20${year}`;
 };
 
 /** 
@@ -606,28 +625,28 @@ export const reverseExtractYearOfBirth = (codiceFiscale: string): string => {
 * @returns The extracted birth place.
 */
 export const reverseExtractBirthplace = (codiceFiscale: string): string => {
- if (!codiceFiscale || codiceFiscale.length !== 16) {
-   throw new InvalidInputError("Invalid codice fiscale.");
- }
+  if (!codiceFiscale || codiceFiscale.length !== 16) {
+    throw new InvalidInputError("Invalid codice fiscale.");
+  }
 
- // Extract characters from index 11 to 15 (exclusive) from the codice fiscale
- const fisco = codiceFiscale.slice(11, 15);
- let cod_comune = "";
+  // Extract characters from index 11 to 15 (exclusive) from the codice fiscale
+  const fisco = codiceFiscale.slice(11, 15);
+  let cod_comune = "";
 
- // Iterate through the provinces data to find the matching birth place
- Object.values(getProvinces()).forEach((sottostruttura) => {
-   Object.values(sottostruttura).forEach((province) => {
-     const comune = province.find((el) => el.cod_fisco === fisco);
-     if (comune) {
-       cod_comune = comune.comune;
-     }
-   });
- });
+  // Iterate through the provinces data to find the matching birth place
+  Object.values(getProvinces()).forEach((sottostruttura) => {
+    Object.values(sottostruttura).forEach((province) => {
+      const comune = province.find((el) => el.cod_fisco === fisco);
+      if (comune) {
+        cod_comune = comune.comune;
+      }
+    });
+  });
 
- if (cod_comune) {
-   return cod_comune;
- }
- return "";
+  if (cod_comune) {
+    return cod_comune;
+  }
+  return "";
 };
 
 /** 
@@ -637,28 +656,29 @@ export const reverseExtractBirthplace = (codiceFiscale: string): string => {
 * @returns The extracted birth place's initials.
 */
 export const reverseExtractBirthplaceInitials = (
- codiceFiscale: string
+  codiceFiscale: string
 ): string => {
- if (!codiceFiscale || codiceFiscale.length !== 16) {
-   throw new InvalidInputError("Invalid codice fiscale.");
- }
+  if (!codiceFiscale || codiceFiscale.length !== 16) {
+    throw new InvalidInputError("Invalid codice fiscale.");
+  }
 
- // Extract characters from index 11 to 15 (exclusive) from the codice fiscale
- const fisco = codiceFiscale.slice(11, 15);
- let cod_comune = "";
+  // Extract characters from index 11 to 15 (exclusive) from the codice fiscale
+  const fisco = codiceFiscale.slice(11, 15);
+  let cod_comune = "";
 
- // Iterate through the provinces data to find the matching birth place
- Object.values(getProvinces()).forEach((sottostruttura) => {
-   Object.values(sottostruttura).forEach((province) => {
-     const comune = province.find((el) => el.cod_fisco === fisco);
-     if (comune) {
-       cod_comune = comune.provincia;
-     }
-   });
- });
+  // Iterate through the provinces data to find the matching birth place
+  Object.values(getProvinces()).forEach((sottostruttura) => {
+    Object.values(sottostruttura).forEach((province) => {
+      const comune = province.find((el) => el.cod_fisco === fisco);
+      if (comune) {
+        cod_comune = comune.provincia;
+      }
+    });
+  });
 
- if (cod_comune) {
-   return cod_comune;
- }
- return "";
+  if (cod_comune) {
+    return cod_comune;
+  }
+  return "";
 }
+

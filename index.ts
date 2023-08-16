@@ -3,7 +3,7 @@
  */
 
 export {
-    generateCodiceFiscale, 
+    generateCodiceFiscale,
     extractLastName,
     extractFirstName,
     extractYearOfBirth,
@@ -28,4 +28,4 @@ export {
  * UTILS
  */
 
-export {getProvinces} from './utils/CommonUtils'
+export { getProvinces, getEstero, removeAccentsAndSpaces } from './utils/CommonUtils'

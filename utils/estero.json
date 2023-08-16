@@ -1,0 +1,894 @@
+[
+    {
+     "name": "Albania",
+     "code_at": "Z100"
+    },
+    {
+     "name": "Andorra",
+     "code_at": "Z101"
+    },
+    {
+     "name": "Austria",
+     "code_at": "Z102"
+    },
+    {
+     "name": "Belgio",
+     "code_at": "Z103"
+    },
+    {
+     "name": "Bulgaria",
+     "code_at": "Z104"
+    },
+    {
+     "name": "Danimarca",
+     "code_at": "Z107"
+    },
+    {
+     "name": "Finlandia",
+     "code_at": "Z109"
+    },
+    {
+     "name": "Francia",
+     "code_at": "Z110"
+    },
+    {
+     "name": "Germania",
+     "code_at": "Z112"
+    },
+    {
+     "name": "Regno Unito",
+     "code_at": "Z114"
+    },
+    {
+     "name": "Grecia",
+     "code_at": "Z115"
+    },
+    {
+     "name": "Irlanda",
+     "code_at": "Z116"
+    },
+    {
+     "name": "Islanda",
+     "code_at": "Z117"
+    },
+    {
+     "name": "Liechtenstein",
+     "code_at": "Z119"
+    },
+    {
+     "name": "Lussemburgo",
+     "code_at": "Z120"
+    },
+    {
+     "name": "Malta",
+     "code_at": "Z121"
+    },
+    {
+     "name": "Monaco",
+     "code_at": "Z123"
+    },
+    {
+     "name": "Norvegia",
+     "code_at": "Z125"
+    },
+    {
+     "name": "Paesi Bassi",
+     "code_at": "Z126"
+    },
+    {
+     "name": "Polonia",
+     "code_at": "Z127"
+    },
+    {
+     "name": "Portogallo",
+     "code_at": "Z128"
+    },
+    {
+     "name": "Romania",
+     "code_at": "Z129"
+    },
+    {
+     "name": "San Marino",
+     "code_at": "Z130"
+    },
+    {
+     "name": "Spagna",
+     "code_at": "Z131"
+    },
+    {
+     "name": "Svezia",
+     "code_at": "Z132"
+    },
+    {
+     "name": "Svizzera",
+     "code_at": "Z133"
+    },
+    {
+     "name": "Ucraina",
+     "code_at": "Z138"
+    },
+    {
+     "name": "Ungheria",
+     "code_at": "Z134"
+    },
+    {
+     "name": "Federazione russa",
+     "code_at": "Z154"
+    },
+    {
+     "name": "Stato della Città del Vaticano",
+     "code_at": "Z106"
+    },
+    {
+     "name": "Estonia",
+     "code_at": "Z144"
+    },
+    {
+     "name": "Lettonia",
+     "code_at": "Z145"
+    },
+    {
+     "name": "Lituania",
+     "code_at": "Z146"
+    },
+    {
+     "name": "Croazia",
+     "code_at": "Z149"
+    },
+    {
+     "name": "Slovenia",
+     "code_at": "Z150"
+    },
+    {
+     "name": "Bosnia-Erzegovina",
+     "code_at": "Z153"
+    },
+    {
+     "name": "Macedonia del Nord",
+     "code_at": "Z148"
+    },
+    {
+     "name": "Moldova",
+     "code_at": "Z140"
+    },
+    {
+     "name": "Slovacchia",
+     "code_at": "Z155"
+    },
+    {
+     "name": "Bielorussia",
+     "code_at": "Z139"
+    },
+    {
+     "name": "Repubblica ceca",
+     "code_at": "Z156"
+    },
+    {
+     "name": "Montenegro",
+     "code_at": "Z159"
+    },
+    {
+     "name": "Serbia",
+     "code_at": "Z158"
+    },
+    {
+     "name": "Kosovo",
+     "code_at": "Z160"
+    },
+    {
+     "name": "Afghanistan",
+     "code_at": "Z200"
+    },
+    {
+     "name": "Arabia Saudita",
+     "code_at": "Z203"
+    },
+    {
+     "name": "Bahrein",
+     "code_at": "Z204"
+    },
+    {
+     "name": "Bangladesh",
+     "code_at": "Z249"
+    },
+    {
+     "name": "Bhutan",
+     "code_at": "Z205"
+    },
+    {
+     "name": "Myanmar\/Birmania",
+     "code_at": "Z206"
+    },
+    {
+     "name": "Brunei Darussalam",
+     "code_at": "Z207"
+    },
+    {
+     "name": "Cambogia",
+     "code_at": "Z208"
+    },
+    {
+     "name": "Sri Lanka",
+     "code_at": "Z209"
+    },
+    {
+     "name": "Cina",
+     "code_at": "Z210"
+    },
+    {
+     "name": "Cipro",
+     "code_at": "Z211"
+    },
+    {
+     "name": "Corea del Nord",
+     "code_at": "Z214"
+    },
+    {
+     "name": "Corea del Sud",
+     "code_at": "Z213"
+    },
+    {
+     "name": "Emirati Arabi Uniti",
+     "code_at": "Z215"
+    },
+    {
+     "name": "Filippine",
+     "code_at": "Z216"
+    },
+    {
+     "name": "Palestina",
+     "code_at": "Z161"
+    },
+    {
+     "name": "Giappone",
+     "code_at": "Z219"
+    },
+    {
+     "name": "Giordania",
+     "code_at": "Z220"
+    },
+    {
+     "name": "India",
+     "code_at": "Z222"
+    },
+    {
+     "name": "Indonesia",
+     "code_at": "Z223"
+    },
+    {
+     "name": "Iran",
+     "code_at": "Z224"
+    },
+    {
+     "name": "Iraq",
+     "code_at": "Z225"
+    },
+    {
+     "name": "Israele",
+     "code_at": "Z226"
+    },
+    {
+     "name": "Kuwait",
+     "code_at": "Z227"
+    },
+    {
+     "name": "Laos",
+     "code_at": "Z228"
+    },
+    {
+     "name": "Libano",
+     "code_at": "Z229"
+    },
+    {
+     "name": "Timor Leste",
+     "code_at": "Z242"
+    },
+    {
+     "name": "Maldive",
+     "code_at": "Z232"
+    },
+    {
+     "name": "Malaysia",
+     "code_at": "Z247"
+    },
+    {
+     "name": "Mongolia",
+     "code_at": "Z233"
+    },
+    {
+     "name": "Nepal",
+     "code_at": "Z234"
+    },
+    {
+     "name": "Oman",
+     "code_at": "Z235"
+    },
+    {
+     "name": "Pakistan",
+     "code_at": "Z236"
+    },
+    {
+     "name": "Qatar",
+     "code_at": "Z237"
+    },
+    {
+     "name": "Singapore",
+     "code_at": "Z248"
+    },
+    {
+     "name": "Siria",
+     "code_at": "Z240"
+    },
+    {
+     "name": "Thailandia",
+     "code_at": "Z241"
+    },
+    {
+     "name": "Turchia",
+     "code_at": "Z243"
+    },
+    {
+     "name": "Vietnam",
+     "code_at": "Z251"
+    },
+    {
+     "name": "Yemen",
+     "code_at": "Z246"
+    },
+    {
+     "name": "Kazakhstan",
+     "code_at": "Z255"
+    },
+    {
+     "name": "Uzbekistan",
+     "code_at": "Z259"
+    },
+    {
+     "name": "Armenia",
+     "code_at": "Z252"
+    },
+    {
+     "name": "Azerbaigian",
+     "code_at": "Z253"
+    },
+    {
+     "name": "Georgia",
+     "code_at": "Z254"
+    },
+    {
+     "name": "Kirghizistan",
+     "code_at": "Z256"
+    },
+    {
+     "name": "Tagikistan",
+     "code_at": "Z257"
+    },
+    {
+     "name": "Taiwan",
+     "code_at": "Z217"
+    },
+    {
+     "name": "Turkmenistan",
+     "code_at": "Z258"
+    },
+    {
+     "name": "Algeria",
+     "code_at": "Z301"
+    },
+    {
+     "name": "Angola",
+     "code_at": "Z302"
+    },
+    {
+     "name": "Costa d'Avorio",
+     "code_at": "Z313"
+    },
+    {
+     "name": "Benin",
+     "code_at": "Z314"
+    },
+    {
+     "name": "Botswana",
+     "code_at": "Z358"
+    },
+    {
+     "name": "Burkina Faso",
+     "code_at": "Z354"
+    },
+    {
+     "name": "Burundi",
+     "code_at": "Z305"
+    },
+    {
+     "name": "Camerun",
+     "code_at": "Z306"
+    },
+    {
+     "name": "Capo Verde",
+     "code_at": "Z307"
+    },
+    {
+     "name": "Repubblica Centrafricana",
+     "code_at": "Z308"
+    },
+    {
+     "name": "Ciad",
+     "code_at": "Z309"
+    },
+    {
+     "name": "Comore",
+     "code_at": "Z310"
+    },
+    {
+     "name": "Congo",
+     "code_at": "Z311"
+    },
+    {
+     "name": "Egitto",
+     "code_at": "Z336"
+    },
+    {
+     "name": "Etiopia",
+     "code_at": "Z315"
+    },
+    {
+     "name": "Gabon",
+     "code_at": "Z316"
+    },
+    {
+     "name": "Gambia",
+     "code_at": "Z317"
+    },
+    {
+     "name": "Ghana",
+     "code_at": "Z318"
+    },
+    {
+     "name": "Gibuti",
+     "code_at": "Z361"
+    },
+    {
+     "name": "Guinea",
+     "code_at": "Z319"
+    },
+    {
+     "name": "Guinea-Bissau",
+     "code_at": "Z320"
+    },
+    {
+     "name": "Guinea equatoriale",
+     "code_at": "Z321"
+    },
+    {
+     "name": "Kenya",
+     "code_at": "Z322"
+    },
+    {
+     "name": "Lesotho",
+     "code_at": "Z359"
+    },
+    {
+     "name": "Liberia",
+     "code_at": "Z325"
+    },
+    {
+     "name": "Libia",
+     "code_at": "Z326"
+    },
+    {
+     "name": "Madagascar",
+     "code_at": "Z327"
+    },
+    {
+     "name": "Malawi",
+     "code_at": "Z328"
+    },
+    {
+     "name": "Mali",
+     "code_at": "Z329"
+    },
+    {
+     "name": "Marocco",
+     "code_at": "Z330"
+    },
+    {
+     "name": "Mauritania",
+     "code_at": "Z331"
+    },
+    {
+     "name": "Maurizio",
+     "code_at": "Z332"
+    },
+    {
+     "name": "Mozambico",
+     "code_at": "Z333"
+    },
+    {
+     "name": "Namibia",
+     "code_at": "Z300"
+    },
+    {
+     "name": "Niger",
+     "code_at": "Z334"
+    },
+    {
+     "name": "Nigeria",
+     "code_at": "Z335"
+    },
+    {
+     "name": "Ruanda",
+     "code_at": "Z338"
+    },
+    {
+     "name": "Sao Tomé e Principe",
+     "code_at": "Z341"
+    },
+    {
+     "name": "Seychelles",
+     "code_at": "Z342"
+    },
+    {
+     "name": "Senegal",
+     "code_at": "Z343"
+    },
+    {
+     "name": "Sierra Leone",
+     "code_at": "Z344"
+    },
+    {
+     "name": "Somalia",
+     "code_at": "Z345"
+    },
+    {
+     "name": "Sudafrica",
+     "code_at": "Z347"
+    },
+    {
+     "name": "Sudan",
+     "code_at": "Z348"
+    },
+    {
+     "name": "Eswatini",
+     "code_at": "Z349"
+    },
+    {
+     "name": "Tanzania",
+     "code_at": "Z357"
+    },
+    {
+     "name": "Togo",
+     "code_at": "Z351"
+    },
+    {
+     "name": "Tunisia",
+     "code_at": "Z352"
+    },
+    {
+     "name": "Uganda",
+     "code_at": "Z353"
+    },
+    {
+     "name": "Repubblica Democratica del Congo",
+     "code_at": "Z312"
+    },
+    {
+     "name": "Zambia",
+     "code_at": "Z355"
+    },
+    {
+     "name": "Zimbabwe",
+     "code_at": "Z337"
+    },
+    {
+     "name": "Eritrea",
+     "code_at": "Z368"
+    },
+    {
+     "name": "Sud Sudan",
+     "code_at": "Z907"
+    },
+    {
+     "name": "Antigua e Barbuda",
+     "code_at": "Z532"
+    },
+    {
+     "name": "Bahamas",
+     "code_at": "Z502"
+    },
+    {
+     "name": "Barbados",
+     "code_at": "Z522"
+    },
+    {
+     "name": "Belize",
+     "code_at": "Z512"
+    },
+    {
+     "name": "Canada",
+     "code_at": "Z401"
+    },
+    {
+     "name": "Costa Rica",
+     "code_at": "Z503"
+    },
+    {
+     "name": "Cuba",
+     "code_at": "Z504"
+    },
+    {
+     "name": "Dominica",
+     "code_at": "Z526"
+    },
+    {
+     "name": "Repubblica Dominicana",
+     "code_at": "Z505"
+    },
+    {
+     "name": "El Salvador",
+     "code_at": "Z506"
+    },
+    {
+     "name": "Giamaica",
+     "code_at": "Z507"
+    },
+    {
+     "name": "Grenada",
+     "code_at": "Z524"
+    },
+    {
+     "name": "Guatemala",
+     "code_at": "Z509"
+    },
+    {
+     "name": "Haiti",
+     "code_at": "Z510"
+    },
+    {
+     "name": "Honduras",
+     "code_at": "Z511"
+    },
+    {
+     "name": "Messico",
+     "code_at": "Z514"
+    },
+    {
+     "name": "Nicaragua",
+     "code_at": "Z515"
+    },
+    {
+     "name": "Panama",
+     "code_at": "Z516"
+    },
+    {
+     "name": "Santa Lucia",
+     "code_at": "Z527"
+    },
+    {
+     "name": "Saint Vincent e Grenadine",
+     "code_at": "Z528"
+    },
+    {
+     "name": "Saint Kitts e Nevis",
+     "code_at": "Z533"
+    },
+    {
+     "name": "Stati Uniti d'America",
+     "code_at": "Z404"
+    },
+    {
+     "name": "Argentina",
+     "code_at": "Z600"
+    },
+    {
+     "name": "Bolivia",
+     "code_at": "Z601"
+    },
+    {
+     "name": "Brasile",
+     "code_at": "Z602"
+    },
+    {
+     "name": "Cile",
+     "code_at": "Z603"
+    },
+    {
+     "name": "Colombia",
+     "code_at": "Z604"
+    },
+    {
+     "name": "Ecuador",
+     "code_at": "Z605"
+    },
+    {
+     "name": "Guyana",
+     "code_at": "Z606"
+    },
+    {
+     "name": "Paraguay",
+     "code_at": "Z610"
+    },
+    {
+     "name": "Perù",
+     "code_at": "Z611"
+    },
+    {
+     "name": "Suriname",
+     "code_at": "Z608"
+    },
+    {
+     "name": "Trinidad e Tobago",
+     "code_at": "Z612"
+    },
+    {
+     "name": "Uruguay",
+     "code_at": "Z613"
+    },
+    {
+     "name": "Venezuela",
+     "code_at": "Z614"
+    },
+    {
+     "name": "Australia",
+     "code_at": "Z700"
+    },
+    {
+     "name": "Figi",
+     "code_at": "Z704"
+    },
+    {
+     "name": "Kiribati",
+     "code_at": "Z731"
+    },
+    {
+     "name": "Isole Marshall",
+     "code_at": "Z711"
+    },
+    {
+     "name": "Stati Federati di Micronesia",
+     "code_at": "Z735"
+    },
+    {
+     "name": "Nauru",
+     "code_at": "Z713"
+    },
+    {
+     "name": "Nuova Zelanda",
+     "code_at": "Z719"
+    },
+    {
+     "name": "Palau",
+     "code_at": "Z734"
+    },
+    {
+     "name": "Papua Nuova Guinea",
+     "code_at": "Z730"
+    },
+    {
+     "name": "Isole Salomone",
+     "code_at": "Z724"
+    },
+    {
+     "name": "Samoa",
+     "code_at": "Z726"
+    },
+    {
+     "name": "Tonga",
+     "code_at": "Z728"
+    },
+    {
+     "name": "Tuvalu",
+     "code_at": "Z732"
+    },
+    {
+     "name": "Vanuatu",
+     "code_at": "Z733"
+    },
+    {
+     "name": "Nuova Caledonia",
+     "code_at": "Z716"
+    },
+    {
+     "name": "Saint-Martin (FR)",
+     "code_at": "n.d."
+    },
+    {
+     "name": "Sahara occidentale",
+     "code_at": "Z339"
+    },
+    {
+     "name": "Saint-Barthélemy",
+     "code_at": "n.d."
+    },
+    {
+     "name": "Bermuda",
+     "code_at": "Z400"
+    },
+    {
+     "name": "Isole Cook (NZ)",
+     "code_at": "Z703"
+    },
+    {
+     "name": "Gibilterra",
+     "code_at": "Z113"
+    },
+    {
+     "name": "Isole Cayman",
+     "code_at": "Z530"
+    },
+    {
+     "name": "Anguilla",
+     "code_at": "Z529"
+    },
+    {
+     "name": "Polinesia francese",
+     "code_at": "Z723"
+    },
+    {
+     "name": "Isole Fær Øer",
+     "code_at": "Z108"
+    },
+    {
+     "name": "Jersey",
+     "code_at": "n.d."
+    },
+    {
+     "name": "Aruba",
+     "code_at": "Z501"
+    },
+    {
+     "name": "Sint Maarten (NL)",
+     "code_at": "n.d."
+    },
+    {
+     "name": "Groenlandia",
+     "code_at": "Z402"
+    },
+    {
+     "name": "Sark",
+     "code_at": "n.d."
+    },
+    {
+     "name": "Guernsey",
+     "code_at": "n.d."
+    },
+    {
+     "name": "Isole Falkland (Malvine)",
+     "code_at": "Z609"
+    },
+    {
+     "name": "Isola di Man",
+     "code_at": "Z122"
+    },
+    {
+     "name": "Montserrat",
+     "code_at": "Z531"
+    },
+    {
+     "name": "Curaçao",
+     "code_at": "n.d."
+    },
+    {
+     "name": "Isole Pitcairn",
+     "code_at": "Z722"
+    },
+    {
+     "name": "Saint Pierre e Miquelon",
+     "code_at": "Z403"
+    },
+    {
+     "name": "Sant'Elena",
+     "code_at": "Z340"
+    },
+    {
+     "name": "Isole Turks e Caicos",
+     "code_at": "Z519"
+    },
+    {
+     "name": "Isole Vergini britanniche",
+     "code_at": "Z525"
+    },
+    {
+     "name": "Wallis e Futuna",
+     "code_at": "Z729"
+    }
+   ]
